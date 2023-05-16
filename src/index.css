@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.line-arrow{
+    max-width: 110px;
+    transform: rotate(0deg);
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.line-arrow-div{
+    height: 0.625rem;
+}
+
+.line-arrow-div::after {
+    border-top: calc(0.15625rem) solid rgb(102, 102, 102);
+    content: "";
+    left: 0px;
+    position: absolute;
+    right: calc(0.625rem - 1px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.etiIcon{
+    fill: rgb(102, 102, 102);
+    height: 0.625rem;
+    width: 0.625rem;
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.flight-item{
+    flex: 1 0 24%;
+}
+.flight-direction{
+    flex: 1 0 4%;
+}
+@media only screen and (max-width: 600px) {
+    .flight-item{
+        flex: 1 0 0% !important;
+    }
 }
